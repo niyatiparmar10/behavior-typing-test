@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 40px 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 36px 40px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #1a1a2e;
+  margin-bottom: 8px;
+}
+
+.instructions {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 140px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select {
+  padding: 7px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.required {
+  color: red;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.prompt-label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+#textPrompt {
+  background-color: #f7f9fc;
+  padding: 16px 20px;
+  border-left: 5px solid #0077cc;
+  border-radius: 4px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #222;
+  white-space: pre-wrap;
+}
+
+#statusMessage {
+  font-size: 14px;
+  min-height: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+#typingArea {
+  width: 100%;
+  font-size: 15px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  resize: none;
+  line-height: 1.7;
+  font-family: Arial, sans-serif;
+  transition: border-color 0.2s;
+}
+
+#typingArea:focus {
+  outline: none;
+  border-color: #0077cc;
+}
+
+button {
+  padding: 12px 28px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
