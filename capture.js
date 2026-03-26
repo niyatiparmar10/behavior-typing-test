@@ -215,8 +215,8 @@ function sessionQualityCheck(durationMs) {
     );
     return false;
   }
-  if (durationMs > 300000) {
-    alert("Session too long (over 5 minutes). Please try again.");
+  if (durationMs > 420000) {
+    alert("Session too long (over 7 minutes). Please try again.");
     return false;
   }
   return true;
