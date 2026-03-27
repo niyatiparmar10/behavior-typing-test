@@ -79,6 +79,7 @@ function setCursor(index) {
 }
 
 function updateDisplay(typedText, cursorIndex = typingArea.selectionStart) {
+  const scrollY = window.scrollY;
   cursorIndex = Math.max(0, Math.min(cursorIndex, chars.length));
 
   for (let i = 0; i < chars.length; i++) {
@@ -101,6 +102,7 @@ function updateDisplay(typedText, cursorIndex = typingArea.selectionStart) {
   }
 
   setCursor(cursorIndex);
+  window.scrollTo(0, scrollY);
 
   if (typedText === promptText) {
     statusMessage.innerText =
