@@ -4,21 +4,19 @@
     <title>Behavior Typing Test</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="container">
       <h1>Typing Behaviour Collection</h1>
       <p class="instructions">
-        Please type the paragraph below <strong>normally</strong>. Do not type
-        faster or slower than usual. Do not copy-paste. Stay on this page until
-        done.
+        Type the paragraph below normally. Do not rush or slow down
+        intentionally. Do not copy-paste.
       </p>
 
-      <!-- Participant Info -->
-      <div class="form-row">
+      <!-- Participant Info — filled once, persists across sessions -->
+      <div class="form-row" id="participantForm">
         <div class="form-group">
           <label for="userID">User ID <span class="required">*</span></label>
-          <input type="text" id="userID" placeholder="e.g. user001" required />
+          <input type="text" id="userID" placeholder="e.g. user001" />
         </div>
         <div class="form-group">
           <label for="age">Age</label>
@@ -41,7 +39,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="keyboard">Keyboard Type</label>
+          <label for="keyboard">Keyboard</label>
           <select id="keyboard">
             <option value="">Select</option>
             <option value="laptop">Laptop</option>
@@ -54,36 +52,42 @@
           <label for="typingExp">Typing Experience</label>
           <select id="typingExp">
             <option value="">Select</option>
-            <option value="beginner">Beginner (hunt and peck)</option>
-            <option value="normal">Normal (some touch typing)</option>
-            <option value="fast">Fast (full touch typing)</option>
+            <option value="beginner">Beginner</option>
+            <option value="normal">Normal</option>
+            <option value="fast">Fast</option>
           </select>
         </div>
       </div>
 
       <hr />
 
-      <!-- Prompt -->
+      <!-- Session counter -->
+      <div class="session-info">
+        Session: <span id="sessionCounter">1</span>
+        <button id="refreshPara" title="Get a new paragraph">
+          &#8635; New Paragraph
+        </button>
+      </div>
+
       <p class="prompt-label">Type the paragraph below:</p>
-      <div id="textPrompt"></div>
+
+      <!-- Monkeytype display -->
+      <div id="typingDisplay"></div>
+
       <p id="statusMessage"></p>
 
-      <!-- Typing Area -->
+      <!-- Hidden textarea -->
       <textarea
         id="typingArea"
-        placeholder="Start typing here..."
-        rows="8"
         autocomplete="off"
         autocorrect="off"
         autocapitalize="off"
         spellcheck="false"
-      >
-      </textarea>
+      ></textarea>
 
       <br /><br />
       <button id="downloadData">Download Session Data</button>
     </div>
-
     <script src="capture.js"></script>
   </body>
 </html>
